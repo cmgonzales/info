@@ -1,72 +1,57 @@
-var scene = new THREE.Scene();
 
-var camera =  new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight, 0.1,1000)
-camera.position.z = 10;
-var renderer =  new THREE.WebGLRenderer({antialias: true});
+var stars = 20000;
+var container = document.createElement('div');
+document.body.appendChild( container );
 
-renderer.setClearColor("#e5e5e5")
-renderer.setSize(window.innerWidth,window.innerHeight);
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight,1, 4000)
+camera.position.z = 1000; 
 
-document.body.appendChild(renderer.domElement)
+var renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+container.appendChild( renderer.domElement );
 
 window.addEventListener('resize', () => {
-
-    renderer.setSize(window.innerWidth,window.innerHeight);
-    camera.aspect = window.innerWidth / window.innerHeight;
-
-    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
 })
 
-var raycaster = new THREE.Raycaster();
-var mouse = new THREE.Vector2();
+var mouseX = 0;
+var mouseY = 0;
 
-var geometry = new THREE.BoxGeometry(1,1,1);
-var material = new THREE.MeshLambertMaterial({color: 0xFFCC00});
-//var mesh = new THREE.Mesh(geometry, material);
 
-//scene.add(mesh)
+var scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2( 0x555555, 0.0003 );  
+var geometry = new THREE.Geometry();
 
-meshX = -10;
-
-for(var i  = 0; i<15; 1++ ){
-    var mesh = new THREE.Mesh(geometry, material)
-    mesh.postion.x = (Math.random() - 0.5)* 10;
-    mesh.postion.y = (Math.random() - 0.5)* 10;
-    mesh.postion.z = (Math.random() - 0.5)* 10;
-    scene.add(mesh)
-    meshX +=1
+for (i = 0; i < stars; i ++) 
+{ 
+  var vertex = new THREE.Vector3();
+  vertex.x = Math.random()*40000-20000;
+  vertex.y = Math.random()*7000-3500;
+  vertex.z = Math.random()*7000-3500;
+  geometry.vertices.push( vertex );
 }
 
-var light = new THREE.PointLight(0xFFFFFF,1,500)
-light.position.set(10,0,25)
-scene.add(light)
+var material = new THREE.ParticleBasicMaterial( { size: 6 });
+var particles = new THREE.ParticleSystem( geometry, material );
+      
+scene.add( particles ); 
 
-var render = function() {
-    requestAnimationFrame(render);
+camera.position.z = 1000;
+
+
+
+renderer.render( scene, camera );
+
+
+function onMouseMove( event ) {
     
-    renderer.render(scene, camera);
+    mouseX = event.clientX;
+    mouseY = event.clientY;
 }
 
-function onMouseMove(event){
-    event.preventDefault();
-    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-	mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 
-    raycaster.setFromCamera (mouse, camera);
-    var intersects = raycaster.intersectObjects(scene.children);
-
-    for( var i = 0; i < intersects.length; i++){
-        this.tl = new TimelineMax();
-this.tl.to(intersects[i].object.scale, 1, {x: 2, ease: Expo.easeOut})
-this.tl.to(intersects[i].object.scale, .5, {x: .5, ease: Expo.easeOut})
-this.tl.to(intersects[i].object.position, .5, {x: 2, ease: Expo.easeOut})
-this.tl.to(intersects[i].object.rotation, .5, {y: Math.PI*.5, ease: Expo.easeOut}, "=-1.5")
-        
-    }
-}
-
-render();
+document.addEventListener( 'mousemove', onMouseMove, false );
+setInterval(update,1000/30); 
 
 
 
-window.addEventListener('mousemove', onMouseMove);
