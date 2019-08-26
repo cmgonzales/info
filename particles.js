@@ -51,7 +51,7 @@ var camera, scene, renderer,
 				
 				for ( var positionZ= 1; positionZ < 2000; positionZ++ ) {
 		
-					material = new THREE.ParticleBasicMaterial( { color: 0xffffff, program: particleRender, size: 2 } );
+					material = new THREE.ParticleBasicMaterial( { color: "white", program: particleRender, size: 2 } );
 					
 					particle = new THREE.Particle(material);
 		
@@ -95,7 +95,7 @@ var camera, scene, renderer,
 		
 					
 				
-		            particle.position.z +=  mouseX * 0.07;
+		            particle.position.z +=  mouseX * 0.10;
 					
 					if(particle.position.z>1350) particle.position.z-=2000; 
 		

@@ -1,7 +1,15 @@
+@font-face {
+    font-family: "Star Wars";
+    src: url('fonts/starwars.ttf'),
+         url('fonts/starwars.eot');
+}
+
 body{
     margin: 0;
     height: 100vh;
+    color: yellow;
 }
+
 
 canvas {
     position: absolute;
@@ -9,3 +17,27 @@ canvas {
     left: 0;
     z-index: -1;
 }
+
+#starwars {
+    perspective: 200px;
+    text-align: center;
+    padding-top: 200px;
+    text-justify: inter-word;
+  }
+  
+  #starwars-text {
+    font-family: Star Wars;
+    font-size: 3.6em;
+    transform: rotateX(25deg);
+    width: 80%;
+    margin: 0 auto;
+
+  }
+  #mission{
+      float: right;
+  }
+
+  #jedi{
+      size: 30px;
+      margin-left: 20px;
+  }
