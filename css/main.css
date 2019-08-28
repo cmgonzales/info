@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Star Wars";
-    src: url('fonts/starwars.ttf'),
+    src: 
          url('fonts/starwars.eot');
 }
 
@@ -33,20 +33,27 @@ canvas {
     margin: 0 auto;
 
   }
-  #mission{
-      float: right;
-  }
 
   .jedi{
       margin-top: 70px;
       font-size: 50px;
-      margin-left: 60px;
+      position: absolute;
+      margin-left: 70px;
+   
+  }
+
+  input[type=checkbox]:checked ~ .jedi {
+    color: blue;
+  }
+
+  input{
+    display: none;
   }
 
   .mission{
-    margin-top: 70px;
+    font-size: 50px;
+    margin-top: 80px;
     position: absolute;
-    right: 150px;  
-    
-    
+    right: 90px;  
+
   }

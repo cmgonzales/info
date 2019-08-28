@@ -10,23 +10,23 @@
 </head>
 <body>
         <div id="starwars">
-                <h2 id="starwars-text">
+                <h1 id="starwars-text">
                 WELCOME TO GALAXY QUEST........
-                </h2>
-                <p>Please click here to accept mission</p>
+                </h1>
+                <p>Please click the star until it turns to blue. Then click the spaceship to accept your mission</p>
               </div>
               <div>
-              <button class= "jedi">
-              <i class="fab fa-jedi-order"></i>
-            </button>
-            <button class = "mission" >
-                stest
-            </button>
+                  <input type = "checkbox" id = "something">
+             <label class = "jedi" onclick = star()  for = "something"> <i class="fas fa-star"></i></label>
+            
+            <a id = "welcome" class = "mission">     
+                <i class="fas fa-jedi" ></i>
+            </a>
         </div>
 </body>
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-
     <script src = "particles.js"></script>
+    <script src = "main.js"></script>
     
 </html>
