@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,33 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
+
 <body>
-        <div id="starwars">
-                <h1 id="starwars-text">
-                WELCOME TO GALAXY QUEST........
-                </h1>
-                <p>Please click the star until it turns to blue. Then click the spaceship to accept your mission</p>
-              </div>
-              <div>
-                  <input type = "checkbox" id = "something">
-             <label class = "jedi" onclick = star()  for = "something"> <i class="fas fa-star"></i></label>
-            
-            <a id = "welcome" class = "mission">     
-                <i class="fas fa-jedi" ></i>
-            </a>
+    <div id="starwars">
+        <h1 id="starwars-text">
+            WELCOME TO GALAXY QUEST........
+        </h1>
+        <p>Please click the star until it turns to blue. Then click the spaceship to accept your mission</p>
+    </div>
+    <div>
+        <input type="checkbox" id="something">
+        <label class="jedi" onclick=star() for="something"> <i class="fas fa-star"></i></label>
+
+        <a id="wel" class="mission">
+            <i class="fas fa-jedi"></i>
+        </a>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>test</p>
         </div>
+    </div>
+
 </body>
-<script src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-    <script src = "particles.js"></script>
-    <script src = "main.js"></script>
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+<script src="particles.js"></script>
+<script src="main.js"></script>
+
 </html>
