@@ -3,13 +3,13 @@ function star() {
 
   var wel = document.getElementById("wel");
 
-  var span = document.getElementsByClassName("close")[0];
+  var span = document.getElementsByTagName("BUTTON")[0];
 
   wel.onclick = function() {
     modal.style.display = "block";
   };
 
-  span.onclick = function() {
+ span.onclick = function () {
     modal.style.display = "none";
     location.reload();
   };
