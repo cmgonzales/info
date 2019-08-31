@@ -27,17 +27,21 @@ canvas {
   }
   
   #starwars-text {
-    font-family: Star Wars;
+    font-family: Serif Gothic;
     font-size: 3.6em;
     transform: rotateX(25deg);
     width: 80%;
     margin: 0 auto;
 
   }
-
+  p{
+    font-family: Star Wars;
+    font-size: 1.5em;
+    transform: rotateX(10deg);
+  }
   .jedi{
       margin-top: 70px;
-      font-size: 50px;
+      font-size: 3em;
       position: absolute;
       margin-left: 70px;
       cursor: pointer;
@@ -52,7 +56,7 @@ canvas {
   }
 
   .mission{
-    font-size: 50px;
+    font-size: 3em;
     margin-top: 80px;
     position: absolute;
     right: 90px;  
