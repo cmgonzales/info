@@ -1,1 +1,1 @@
-a landing page utilizing three.js
+a landing page utilizing three.js with animated stars
